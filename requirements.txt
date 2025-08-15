@@ -1,0 +1,5 @@
+kafka-python
+pymongo
+mysql-connector-python
+transformers
+torch
