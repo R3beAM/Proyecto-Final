@@ -58,6 +58,7 @@ def create_producer(retries: int = 5, delay: float = 1.0) -> KafkaProducer | Non
             return KafkaProducer(
                 bootstrap_servers=BROKER,
                 value_serializer=lambda v: json.dumps(v).encode("utf-8"),
+                max_block_ms = 600000
             )
         except NoBrokersAvailable:
             if attempt == retries - 1:
@@ -75,11 +76,12 @@ def run() -> None:
     num_messages = random.randint(5, 15)
     for _ in range(num_messages):
         msg = generate_message()
-        producer.send(TOPIC, msg)
-        producer.flush()
+        print(msg)
+        producer.send("twitter", msg)
         print(f"Sent: {msg}")
         time.sleep(random.uniform(0.5, 3.0))
 
+    producer.flush()
     producer.close()
 
 
