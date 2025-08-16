@@ -12,7 +12,7 @@ TOPIC = "twitter"
 # Allow broker configuration via environment variable for flexibility in
 # different deployment environments.  Default to the local Kafka instance
 # used during development.
-BROKER = os.getenv("KAFKA_BROKER", "localhost:9092")
+BROKER = os.getenv("KAFKA_BROKER", "kafka:9092")
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "tweets_1000_labeled.jsonl"
 
