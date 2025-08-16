@@ -8,7 +8,7 @@ from kafka.errors import NoBrokersAvailable
 from pymongo import MongoClient
 
 TOPIC = "twitter"
-BROKER = os.getenv("KAFKA_BROKER", "kafka:9092")
+BROKER = os.getenv("KAFKA_BROKER", "localhost:9092")
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 DB_NAME = "twitter_db"
 COLLECTION = "raw_comments"
