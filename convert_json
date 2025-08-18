@@ -1,0 +1,18 @@
+import json
+import csv
+
+with open("tweets_1000_labeled.jsonl", "r", encoding="utf-8") as fin, \
+     open("tweets.csv", "w", newline="", encoding="utf-8") as fout:
+
+    writer = csv.writer(fout)
+    writer.writerow(["user_id", "comment", "sentiment", "created_at", "tweet_id"])  # cabecera
+
+    for line in fin:
+        obj = json.loads(line)
+        writer.writerow([
+            obj.get("user_id"),
+            obj.get("comment"),
+            obj.get("sentiment"),
+            obj.get("created_at"),
+            obj.get("tweet_id")
+        ])
