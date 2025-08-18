@@ -66,9 +66,9 @@ python scripts/ml_pipeline.py
 
 ## Dashboard en Metabase
 
-1. Acceda a [http://localhost:3000](http://localhost:3000) y complete la configuración inicial.
-2. Configure una conexión a la base de datos MySQL (`host: mysql`, `usuario: root`, `contraseña: example`, `base: twitter`).
-3. Cree al menos **tres visualizaciones**, por ejemplo:
+1. Accede a [http://localhost:3000](http://localhost:3000) y complete la configuración inicial.
+2. Configura una conexión a la base de datos MySQL (`host: mysql`, `usuario: root`, `contraseña: example`, `base: twitter`).
+3. Crea al menos **tres visualizaciones**, por ejemplo:
    - Conteo de mensajes por sentimiento.
    - Comentarios negativos por usuario.
    - Evolución temporal de comentarios positivos.
@@ -80,5 +80,4 @@ python scripts/ml_pipeline.py
 
 ## Notas
 
-- El modelo `distilbert-base-uncased-finetuned-sst-2-english` de Hugging Face se ejecuta directamente con PyTorch, sin utilizar `transformers.pipeline`.
-- Ajuste las variables y puertos según sea necesario para su entorno.
+- El modelo `distilbert-base-uncased-finetuned-sst-2-english` de Hugging Face se ejecuta directamente con PyTorch.
